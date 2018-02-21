@@ -15,14 +15,15 @@ io.on('connection', function(socket){
         color: ''
     };
     socket.on('cookies', function(msg){
-        if(msg[0] !== '') {
+        let cname = decodeURIComponent(msg[0]);
+        if(cname !== '') {
             function isTaken(obj) {
-                return obj.name === msg[0];
+                return obj.name === cname;
             }
 
             if(users.find(isTaken) === undefined) {
-                user.name = msg[0];
-                user.color = msg[1];
+                user.name = cname;
+                user.color = decodeURIComponent(msg[1]);
                 users.push(user);
             }
             else {

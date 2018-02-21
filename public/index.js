@@ -41,8 +41,8 @@ $(function () {
             messages[0].scrollTop = messages[0].scrollHeight;
         }
         myName = msg.name;
-        setCookie('name', myName, 1);
-        setCookie('color', msg.color, 1);
+        setCookie('name', encodeURIComponent(myName), 1);
+        setCookie('color', encodeURIComponent(msg.color), 1);
     });
 
     function checkScroll() {
