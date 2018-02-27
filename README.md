@@ -1,5 +1,6 @@
 # SENG513A3
 This assignment was built using https://github.com/socketio/chat-example as the template.
+App is deployed at https://apperinos.herokuapp.com/
 
 To run the code:
 
